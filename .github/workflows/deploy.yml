@@ -16,6 +16,7 @@ jobs:
         with:
           host: 192.168.2.206
           username: garik
+          port: 22
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             cd /home/garik/projects/healthcheck
