@@ -3,7 +3,7 @@
   const pings = data.pings;
 </script>
 
-<h1>Healthcheck</h1>
+<h1>Healthcheck for GAR1K.C0DES</h1>
 
 {#if pings.length === 0}
   <p>No data yet. Set HEALTHCHECK_URL in your .env and start the server.</p>
