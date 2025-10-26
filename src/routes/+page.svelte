@@ -2,14 +2,15 @@
   export let data: { pings: Array<{ id: number; created_at: string; url: string; status: number; ok: number; response_ms: number; error: string | null }>} ;
   const pings = data.pings;
 </script>
-
 <h1>Healthcheck @ GAR1K.C0DES</h1>
 
 {#if pings.length === 0}
   <p>No data yet. Set HEALTHCHECK_URL in your .env and start the server.</p>
 {:else}
   <p>Total records (last 2 weeks): {pings.length}</p>
-  // <p>Most recent: {pings[0].created_at} — {pings[0].ok ? 'OK' : 'FAIL'} ({pings[0].status}) in {pings[0].response_ms}ms</p>
+  {#if pings.length > 0}
+  <p>Most recent: {pings[0].created_at} — {pings[0].ok ? 'OK' : 'FAIL'} ({pings[0].status}) in {pings[0].response_ms}ms</p>
+{/if}
   <table>
     <thead>
       <tr>
