@@ -1,7 +1,7 @@
 name: Deploy to Hackshack
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   deploy:
@@ -10,17 +10,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.1.0
-        with:
-          host: hackshack.garik.codes
-          username: garik
-          port: 22
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /home/garik/projects/healthcheck
-            git pull origin main
-            pnpm install --omit=dev
-            pnpm run build
-            pm2 restart healthcheck
+        
+      - name: Deploy via Cloudflare Tunnel
+        env:
+          CF_CLIENT_ID: ${{ secrets.CF_CLIENT_ID }}
+          CF_CLIENT_SECRET: ${{ secrets.CF_CLIENT_SECRET }}
+        run: |
+          wget -q https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64.deb
+          sudo dpkg -i cloudflared-linux-amd64.deb
+          cloudflared access ssh --hostname hackshack.garik.codes --id $CF_CLIENT_ID --secret $CF_CLIENT_SECRET --command "cd /home/garik/projects/healthcheck && git pull origin main && pnpm install --omit=dev && pnpm run build && pm2 restart healthcheck"
