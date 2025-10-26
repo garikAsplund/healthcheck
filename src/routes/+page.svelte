@@ -8,9 +8,6 @@
   <p>No data yet. Set HEALTHCHECK_URL in your .env and start the server.</p>
 {:else}
   <p>Total records (last 2 weeks): {pings.length}</p>
-  {#if pings.length > 0}
-  <p>Most recent: {pings[0].created_at} — {pings[0].ok ? 'OK' : 'FAIL'} ({pings[0].status}) in {pings[0].response_ms}ms</p>
-{/if}
   <table>
     <thead>
       <tr>
