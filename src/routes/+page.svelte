@@ -2,7 +2,7 @@
   export let data: { pings: Array<{ id: number; created_at: string; url: string; status: number; ok: number; response_ms: number; error: string | null }>} ;
   const pings = data.pings;
 </script>
-<h1><3 Healthcheck @ GAR1K.C0DES work in progess :)</h1>
+<h1>GO TO BED WSAUBI Healthcheck @ GAR1K.C0DES work in progess :)</h1>
 
 {#if pings.length === 0}
   <p>No data yet. Set HEALTHCHECK_URL in your .env and start the server.</p>
