@@ -1,8 +1,7 @@
-import { env } from '$env/dynamic/private';
 import { ensureSchema, insertPing, pruneOldPings } from './db';
 
 export async function runPing() {
-  const url = env.HEALTHCHECK_URL;
+  const url = process.env.HEALTHCHECK_URL;
   if (!url) {
     console.warn('HEALTHCHECK_URL not set; skipping ping');
     return;
