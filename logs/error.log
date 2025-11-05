@@ -163,3 +163,31 @@
 2025-11-02 23:59:37: HEALTHCHECK_URL not set; skipping ping
 2025-11-03 00:15:41: HEALTHCHECK_URL not set; skipping ping
 2025-11-03 00:18:07: HEALTHCHECK_URL not set; skipping ping
+2025-11-04 21:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-04 21:04:21: API error: TypeError: fetch failed
+2025-11-04 21:04:21:     at node:internal/deps/undici/undici:14900:13
+2025-11-04 21:04:21:     at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+2025-11-04 21:04:21:   [cause]: ConnectTimeoutError: Connect Timeout Error (attempted address: healthcheck-garikasplund.aws-us-west-2.turso.io:443, timeout: 10000ms)
+2025-11-04 21:04:21:       at onConnectTimeout (node:internal/deps/undici/undici:2718:28)
+2025-11-04 21:04:21:       at Immediate._onImmediate (node:internal/deps/undici/undici:2699:11)
+2025-11-04 21:04:21:       at process.processImmediate (node:internal/timers:485:21)
+2025-11-04 21:04:21:       at process.callbackTrampoline (node:internal/async_hooks:130:17) {
+2025-11-04 21:04:21:     code: 'UND_ERR_CONNECT_TIMEOUT',
+2025-11-04 21:04:21:     [Symbol(undici.error.UND_ERR)]: true,
+2025-11-04 21:04:21:     [Symbol(undici.error.UND_ERR_CONNECT_TIMEOUT)]: true
+2025-11-04 21:04:21:   }
+2025-11-04 21:04:21: }
+2025-11-04 22:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-04 23:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 00:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 01:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 02:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 03:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 04:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 05:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 06:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 07:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 08:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 09:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 10:04:10: HEALTHCHECK_URL not set; skipping ping
+2025-11-05 11:04:10: HEALTHCHECK_URL not set; skipping ping
